@@ -4,10 +4,12 @@ var chatSession = require('./chatSession.js')
 exports.chatSessionService = function(){	
 	this.startNewChatSession = function(nickName){
 		cSession = new chatSession(nickName, generateChatUniqueId());		
+		console.log(generateChatUniqueId());
 		activeSessions.register(cSession);
 	}
 };
 
 var generateChatUniqueId = function(){
-	 return Math.floor(Math.random()*99999999999).toString()
+	var newDate = new Date;
+	return newDate.getTime().toString()
 }
