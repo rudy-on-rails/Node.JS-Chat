@@ -4,7 +4,7 @@ module.exports = function(nickName, Id, onMessageReceived){
 	this.getId = function(){return this.Id}
 	this.getNickName = function(){return this.nickName}
 	this.receiveMessage = function(message){
-		if (!onMessageReceived)
-			onMessageReceived(message);					
+		if (onMessageReceived)
+			onMessageReceived(message, this.Id);					
 	}
 }
