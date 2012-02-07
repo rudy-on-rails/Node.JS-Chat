@@ -8,5 +8,8 @@ module.exports = {
 	},
 	getSession: function(sessionId){
 		return this.activeSessionsList[sessionId];
+	},
+	removeSession: function(sessionId){
+		delete this.activeSessionsList.sessionId;
 	}
 }
